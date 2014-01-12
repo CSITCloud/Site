@@ -961,12 +961,14 @@
         {
             moveToMexico();
         }
+    }
 
    //good
    if (problems) {
         var response = betterCallSaul();
         if (response === 'run') {
             moveToMexico();
+      }
     }
     ```
     **[[⬆]](#TOC)**
