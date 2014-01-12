@@ -125,10 +125,14 @@
 
     ```javascript
     // bad
-    var items = new Array();
+
+	var a1= new Array();
+    var a2 = new Array(x1, x2, x3);
 
     // good
-    var items = [];
+    
+    var a1 = [];
+    var a2 = [x1, x2, x3];
     ```
 
   - If you don't know array length use Array#push.
@@ -557,7 +561,28 @@
 
 ## <a name='conditionals'>Conditional Expressions & Equality</a>
 
-  - Use `===` and `!==` over `==` and `!=`.
+  - Use `===` and `!==` over `==` and `!=` (looking at you Java/C++/C devs!).
+	
+	```javascript
+    //bad
+
+    737 == '737' 		//true
+    false == 'false'  	//true
+    false == '0'  		//true
+    null == undefined   // true
+    52 != '52' 			//false
+	
+	//good
+
+	737 === '737' 		//false
+    false === 'false'  	//false
+    false === '0'  		//false
+    null === undefined  //false
+	52 !== '52' 		//false
+
+    ```
+
+
   - Conditional expressions are evaluated using coercion with the `ToBoolean` method and always follow these simple rules:
 
     + **Objects** evaluate to **true**
@@ -597,6 +622,19 @@
       // ...stuff...
     }
     ```
+  - Use Conditional (Ternary) Operator `?:` 
+
+  	   ```javascript
+  	   //instead of 
+		if (val) {
+		    return foo();
+		} else {
+		    return bar();
+		}
+
+		//use 
+		return val ? foo() : bar();
+  	   ```
 
   - For more information see [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll
 
