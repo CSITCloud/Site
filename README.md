@@ -5,6 +5,7 @@
 
 ## <a name='TOC'>Table of Contents</a>
 
+  1. [Code Layout](#codelayout)
   1. [Types](#types)
   1. [Objects](#objects)
   1. [Arrays](#arrays)
@@ -19,6 +20,7 @@
   1. [Whitespace](#whitespace)
   1. [Commas](#commas)
   1. [Semicolons](#semicolons)
+  1. [Braces](#braces)
   1. [Type Casting & Coercion](#type-coercion)
   1. [Naming Conventions](#naming-conventions)
   1. [Accessors](#accessors)
@@ -32,6 +34,10 @@
   1. [Resources](#resources)
   1. [The JavaScript Style Guide Guide](#guide-guide)
   1. [Contributors](#contributors)
+
+## <a name='codelayout'>Code Layout</a>
+
+**[[⬆]](#TOC)**
 
 ## <a name='types'>Types</a>
 
@@ -826,7 +832,20 @@
         .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
         .call(tron.led);
     ```
-
+  - Never make a compound statement.
+    ```javascript
+    //bad
+    if ('Walter White' === 'Heisenberg') cook();
+    sell(); betterCallSaul(); keepJessieSober();
+    
+    //good
+    if ('Walter White' === 'Heisenberg') 
+        cook();
+        sell(); 
+        betterCallSaul(); 
+        keepJessieSober();
+    
+    ```
     **[[⬆]](#TOC)**
 
 ## <a name='commas'>Commas</a>
@@ -846,18 +865,18 @@
 
     // bad
     var hero = {
-        firstName: 'Bob'
-      , lastName: 'Parr'
-      , heroName: 'Mr. Incredible'
-      , superPower: 'strength'
+        firstName: 'Walter'
+      , lastName: 'White'
+      , heroName: 'Heisenberg'
+      , superPower: 'Cooking'
     };
 
     // good
     var hero = {
-      firstName: 'Bob',
-      lastName: 'Parr',
-      heroName: 'Mr. Incredible',
-      superPower: 'strength'
+      firstName: 'Walter',
+      lastName: 'White',
+      heroName: 'Heisenberg',
+      superPower: 'Cooking'
     };
     ```
 
@@ -868,24 +887,24 @@
     ```javascript
     // bad
     var hero = {
-      firstName: 'Kevin',
-      lastName: 'Flynn',
+      firstName: 'Hank',
+      lastName: 'Schrader',
     };
 
     var heroes = [
-      'Batman',
-      'Superman',
+      'Thor',
+      'Loki',
     ];
 
     // good
     var hero = {
-      firstName: 'Kevin',
-      lastName: 'Flynn'
+      firstName: 'Hank',
+      lastName: 'Schrader'
     };
 
     var heroes = [
-      'Batman',
-      'Superman'
+      'Thor',
+      'Loki'
     ];
     ```
 
@@ -899,23 +918,57 @@
     ```javascript
     // bad
     (function() {
-      var name = 'Skywalker'
+      var name = 'Mr. White'
       return name
     })()
 
     // good
     (function() {
-      var name = 'Skywalker';
+      var name = 'Jessie Pinkman';
       return name;
     })();
 
     // good
     ;(function() {
-      var name = 'Skywalker';
+      var name = 'Gustavo';
       return name;
     })();
-    ```
+  ```
+ >  Did anyone notice that leading semicolon? **Yes** Great Job!
+    Use this as the first statement in your JavaScript file. This helps, while merging two or more JavaScript files.
 
+    **[[⬆]](#TOC)**
+## <a name='braces'>Braces</a>
+
+  - **Always use braces.**
+  - **Even for single-line blocks.**
+
+    ```javascript
+    // bad
+    if (problems)
+        betterCallSaul();
+        
+    //good
+    if (problems){
+        betterCallSaul();
+    }
+    ```
+ - **Opening braces on the same line as the statement.**
+ 
+    ```javascript
+   // bad
+    if (problems) {
+        var response = betterCallSaul();
+        if (response === 'run') {
+            moveToMexico();
+        }
+   //good
+   if (problems) {
+    var response = betterCallSaul();
+    if (response === 'run') {
+        moveToMexico();
+    }
+    ```
     **[[⬆]](#TOC)**
 
 
@@ -1415,6 +1468,7 @@
 **Credits**
   -**We would like to thank and give credit to following links/authors**
   - [Airbnb JavaScript Style Guide] (https://github.com/airbnb/javascript)
+  - [Douglas Crockford](http://javascript.crockford.com/code.html)
   - [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
   - [jQuery Core Style Guidelines](http://docs.jquery.com/JQuery_Core_Style_Guidelines)
   - [Iron Port JavaScript Style Guide](http://wikicentral.cisco.com/display/GROUP/Cisco+IronPort+JavaScript+Style+Guide)
