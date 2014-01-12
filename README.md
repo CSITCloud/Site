@@ -1463,12 +1463,6 @@
 
   **[[⬆]](#TOC)**
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 51ce9d1dba53c9522d197b9d6dc6430117aaf8ea
 ## <a name='authors'>Contributors</a>
 
   - [View Contributors](https://github.com/CSITCloud/Site/graphs/contributors)
