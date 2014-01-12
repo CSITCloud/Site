@@ -32,15 +32,14 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a name="csitjavascript-style-guide" class="anchor" href="#csitjavascript-style-guide"><span class="octicon octicon-link"></span></a>CSITJavaScript Style Guide</h1>
-
-<p><em>A mostly reasonable approach to JavaScript</em></p>
+<a name="csit-javascript-style-guide" class="anchor" href="#csit-javascript-style-guide"><span class="octicon octicon-link"></span></a>CSIT JavaScript Style Guide</h1>
 
 <h2>
 <a name="table-of-contents" class="anchor" href="#table-of-contents"><span class="octicon octicon-link"></span></a><a name="TOC">Table of Contents</a>
 </h2>
 
 <ol>
+<li><a href="#codelayout">Code Layout</a></li>
 <li><a href="#types">Types</a></li>
 <li><a href="#objects">Objects</a></li>
 <li><a href="#arrays">Arrays</a></li>
@@ -55,6 +54,7 @@
 <li><a href="#whitespace">Whitespace</a></li>
 <li><a href="#commas">Commas</a></li>
 <li><a href="#semicolons">Semicolons</a></li>
+<li><a href="#braces">Braces</a></li>
 <li><a href="#type-coercion">Type Casting &amp; Coercion</a></li>
 <li><a href="#naming-conventions">Naming Conventions</a></li>
 <li><a href="#accessors">Accessors</a></li>
@@ -69,6 +69,12 @@
 <li><a href="#guide-guide">The JavaScript Style Guide Guide</a></li>
 <li><a href="#contributors">Contributors</a></li>
 </ol><h2>
+<a name="code-layout" class="anchor" href="#code-layout"><span class="octicon octicon-link"></span></a><a name="codelayout">Code Layout</a>
+</h2>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+
+<h2>
 <a name="types" class="anchor" href="#types"><span class="octicon octicon-link"></span></a><a name="types">Types</a>
 </h2>
 
@@ -170,10 +176,14 @@
 <p>Use the literal syntax for array creation</p>
 
 <div class="highlight highlight-javascript"><pre><span class="c1">// bad</span>
-<span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+
+<span class="kd">var</span> <span class="nx">a1</span><span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">a2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">x1</span><span class="p">,</span> <span class="nx">x2</span><span class="p">,</span> <span class="nx">x3</span><span class="p">);</span>
 
 <span class="c1">// good</span>
-<span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="kd">var</span> <span class="nx">a1</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kd">var</span> <span class="nx">a2</span> <span class="o">=</span> <span class="p">[</span><span class="nx">x1</span><span class="p">,</span> <span class="nx">x2</span><span class="p">,</span> <span class="nx">x3</span><span class="p">];</span>
 </pre></div>
 </li>
 <li>
@@ -611,7 +621,27 @@
 </h2>
 
 <ul>
-<li>Use <code>===</code> and <code>!==</code> over <code>==</code> and <code>!=</code>.</li>
+<li>
+<p>Use <code>===</code> and <code>!==</code> over <code>==</code> and <code>!=</code> (looking at you Java/C++/C devs!).</p>
+
+<div class="highlight highlight-javascript"><pre><span class="c1">//bad</span>
+
+<span class="mi">737</span> <span class="o">==</span> <span class="s1">'737'</span>        <span class="c1">//true</span>
+<span class="kc">false</span> <span class="o">==</span> <span class="s1">'false'</span>    <span class="c1">//true</span>
+<span class="kc">false</span> <span class="o">==</span> <span class="s1">'0'</span>        <span class="c1">//true</span>
+<span class="kc">null</span> <span class="o">==</span> <span class="kc">undefined</span>   <span class="c1">// true</span>
+<span class="mi">52</span> <span class="o">!=</span> <span class="s1">'52'</span>          <span class="c1">//false</span>
+
+<span class="c1">//good</span>
+
+<span class="mi">737</span> <span class="o">===</span> <span class="s1">'737'</span>       <span class="c1">//false</span>
+<span class="kc">false</span> <span class="o">===</span> <span class="s1">'false'</span>   <span class="c1">//false</span>
+<span class="kc">false</span> <span class="o">===</span> <span class="s1">'0'</span>       <span class="c1">//false</span>
+<span class="kc">null</span> <span class="o">===</span> <span class="kc">undefined</span>  <span class="c1">//false</span>
+<span class="mi">52</span> <span class="o">!==</span> <span class="s1">'52'</span>         <span class="c1">//false</span>
+
+</pre></div>
+</li>
 <li>
 <p>Conditional expressions are evaluated using coercion with the <code>ToBoolean</code> method and always follow these simple rules:</p>
 
@@ -663,6 +693,20 @@
 <span class="k">if</span> <span class="p">(</span><span class="nx">collection</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...stuff...</span>
 <span class="p">}</span>
+</pre></div>
+</li>
+<li>
+<p>Use Conditional (Ternary) Operator <code>?:</code> </p>
+
+<div class="highlight highlight-javascript"><pre>   <span class="c1">//instead of </span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">foo</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">bar</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="c1">//use </span>
+    <span class="k">return</span> <span class="nx">val</span> <span class="o">?</span> <span class="nx">foo</span><span class="p">()</span> <span class="o">:</span> <span class="nx">bar</span><span class="p">();</span>
 </pre></div>
 </li>
 <li>
@@ -901,6 +945,22 @@
     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'transform'</span><span class="p">,</span> <span class="s1">'translate('</span> <span class="o">+</span> <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">+</span> <span class="s1">','</span> <span class="o">+</span> <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">+</span> <span class="s1">')'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">tron</span><span class="p">.</span><span class="nx">led</span><span class="p">);</span>
 </pre></div>
+</li>
+<li>
+<p>Never make a compound statement.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="c1">//bad</span>
+<span class="k">if</span> <span class="p">(</span><span class="s1">'Walter White'</span> <span class="o">===</span> <span class="s1">'Heisenberg'</span><span class="p">)</span> <span class="nx">cook</span><span class="p">();</span>
+<span class="nx">sell</span><span class="p">();</span> <span class="nx">betterCallSaul</span><span class="p">();</span> <span class="nx">keepJessieSober</span><span class="p">();</span>
+
+<span class="c1">//good</span>
+<span class="k">if</span> <span class="p">(</span><span class="s1">'Walter White'</span> <span class="o">===</span> <span class="s1">'Heisenberg'</span><span class="p">)</span> 
+    <span class="nx">cook</span><span class="p">();</span>
+    <span class="nx">sell</span><span class="p">();</span> 
+    <span class="nx">betterCallSaul</span><span class="p">();</span> 
+    <span class="nx">keepJessieSober</span><span class="p">();</span>
+
+</pre></div>
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
@@ -924,18 +984,18 @@
 
 <span class="c1">// bad</span>
 <span class="kd">var</span> <span class="nx">hero</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">firstName</span><span class="o">:</span> <span class="s1">'Bob'</span>
-  <span class="p">,</span> <span class="nx">lastName</span><span class="o">:</span> <span class="s1">'Parr'</span>
-  <span class="p">,</span> <span class="nx">heroName</span><span class="o">:</span> <span class="s1">'Mr. Incredible'</span>
-  <span class="p">,</span> <span class="nx">superPower</span><span class="o">:</span> <span class="s1">'strength'</span>
+    <span class="nx">firstName</span><span class="o">:</span> <span class="s1">'Walter'</span>
+  <span class="p">,</span> <span class="nx">lastName</span><span class="o">:</span> <span class="s1">'White'</span>
+  <span class="p">,</span> <span class="nx">heroName</span><span class="o">:</span> <span class="s1">'Heisenberg'</span>
+  <span class="p">,</span> <span class="nx">superPower</span><span class="o">:</span> <span class="s1">'Cooking'</span>
 <span class="p">};</span>
 
 <span class="c1">// good</span>
 <span class="kd">var</span> <span class="nx">hero</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">firstName</span><span class="o">:</span> <span class="s1">'Bob'</span><span class="p">,</span>
-  <span class="nx">lastName</span><span class="o">:</span> <span class="s1">'Parr'</span><span class="p">,</span>
-  <span class="nx">heroName</span><span class="o">:</span> <span class="s1">'Mr. Incredible'</span><span class="p">,</span>
-  <span class="nx">superPower</span><span class="o">:</span> <span class="s1">'strength'</span>
+  <span class="nx">firstName</span><span class="o">:</span> <span class="s1">'Walter'</span><span class="p">,</span>
+  <span class="nx">lastName</span><span class="o">:</span> <span class="s1">'White'</span><span class="p">,</span>
+  <span class="nx">heroName</span><span class="o">:</span> <span class="s1">'Heisenberg'</span><span class="p">,</span>
+  <span class="nx">superPower</span><span class="o">:</span> <span class="s1">'Cooking'</span>
 <span class="p">};</span>
 </pre></div>
 </li>
@@ -948,24 +1008,24 @@
 
 <div class="highlight highlight-javascript"><pre>  <span class="c1">// bad</span>
   <span class="kd">var</span> <span class="nx">hero</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">firstName</span><span class="o">:</span> <span class="s1">'Kevin'</span><span class="p">,</span>
-    <span class="nx">lastName</span><span class="o">:</span> <span class="s1">'Flynn'</span><span class="p">,</span>
+    <span class="nx">firstName</span><span class="o">:</span> <span class="s1">'Hank'</span><span class="p">,</span>
+    <span class="nx">lastName</span><span class="o">:</span> <span class="s1">'Schrader'</span><span class="p">,</span>
   <span class="p">};</span>
 
   <span class="kd">var</span> <span class="nx">heroes</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">'Batman'</span><span class="p">,</span>
-    <span class="s1">'Superman'</span><span class="p">,</span>
+    <span class="s1">'Thor'</span><span class="p">,</span>
+    <span class="s1">'Loki'</span><span class="p">,</span>
   <span class="p">];</span>
 
   <span class="c1">// good</span>
   <span class="kd">var</span> <span class="nx">hero</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">firstName</span><span class="o">:</span> <span class="s1">'Kevin'</span><span class="p">,</span>
-    <span class="nx">lastName</span><span class="o">:</span> <span class="s1">'Flynn'</span>
+    <span class="nx">firstName</span><span class="o">:</span> <span class="s1">'Hank'</span><span class="p">,</span>
+    <span class="nx">lastName</span><span class="o">:</span> <span class="s1">'Schrader'</span>
   <span class="p">};</span>
 
   <span class="kd">var</span> <span class="nx">heroes</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">'Batman'</span><span class="p">,</span>
-    <span class="s1">'Superman'</span>
+    <span class="s1">'Thor'</span><span class="p">,</span>
+    <span class="s1">'Loki'</span>
   <span class="p">];</span>
 </pre></div>
 
@@ -981,21 +1041,69 @@
 
 <div class="highlight highlight-javascript"><pre><span class="c1">// bad</span>
 <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">'Skywalker'</span>
+  <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">'Mr. White'</span>
   <span class="k">return</span> <span class="nx">name</span>
 <span class="p">})()</span>
 
 <span class="c1">// good</span>
 <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">'Skywalker'</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">'Jessie Pinkman'</span><span class="p">;</span>
   <span class="k">return</span> <span class="nx">name</span><span class="p">;</span>
 <span class="p">})();</span>
 
 <span class="c1">// good</span>
 <span class="p">;(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">'Skywalker'</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">'Gustavo'</span><span class="p">;</span>
   <span class="k">return</span> <span class="nx">name</span><span class="p">;</span>
 <span class="p">})();</span>
+</pre></div>
+
+<blockquote>
+<p>Did anyone notice that leading semicolon? <strong>Yes?</strong> Great Job!
+ Use this as the first statement in your JavaScript file. This helps, while merging two or more JavaScript files.</p>
+</blockquote>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>
+<a name="braces" class="anchor" href="#braces"><span class="octicon octicon-link"></span></a><a name="braces">Braces</a>
+</h2>
+
+<ul>
+<li><strong>Always use braces.</strong></li>
+<li>
+<p>Even for single-line blocks.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="c1">// bad</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">problems</span><span class="p">)</span>
+    <span class="nx">betterCallSaul</span><span class="p">();</span>
+
+<span class="c1">//good</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">problems</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">betterCallSaul</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li>
+<p>Opening braces on the same line as the statement.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="c1">// bad</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">problems</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">betterCallSaul</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">response</span> <span class="o">===</span> <span class="s1">'run'</span><span class="p">)</span> 
+    <span class="p">{</span>
+        <span class="nx">moveToMexico</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//good</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">problems</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">betterCallSaul</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">response</span> <span class="o">===</span> <span class="s1">'run'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">moveToMexico</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
@@ -1520,6 +1628,7 @@
 
 <ul>
 <li><a href="https://github.com/airbnb/javascript">Airbnb JavaScript Style Guide</a></li>
+<li><a href="http://javascript.crockford.com/code.html">Douglas Crockford</a></li>
 <li><a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google JavaScript Style Guide</a></li>
 <li><a href="http://docs.jquery.com/JQuery_Core_Style_Guidelines">jQuery Core Style Guidelines</a></li>
 <li><a href="http://wikicentral.cisco.com/display/GROUP/Cisco+IronPort+JavaScript+Style+Guide">Iron Port JavaScript Style Guide</a></li>
@@ -1591,27 +1700,7 @@
 <ul>
 <li><a href="https://github.com/CSITCloud/Site/graphs/contributors">View Contributors</a></li>
 </ul>
-<<<<<<< HEAD
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/CSITCloud/Site/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/CSITCloud/Site/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/CSITCloud/Site"></a> is maintained by <a href="https://github.com/CSITCloud">CSITCloud</a>.</p>
-
-          <p>Credits: This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
-=======
       </section>
->>>>>>> 743219b0bdf610b9e6891b5b45ef1a423fd52254
     </div>
 
     <!-- FOOTER  -->
@@ -1622,7 +1711,17 @@
       </footer>
     </div>
 
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-47073706-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
 
   </body>
 </html>
