@@ -1,4 +1,4 @@
-# CSITJavaScript Style Guide
+# CSIT JavaScript Style Guide
 
 
 
