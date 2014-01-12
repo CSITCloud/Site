@@ -1,7 +1,5 @@
 # CSIT JavaScript Style Guide
 
-
-
 ## <a name='TOC'>Table of Contents</a>
 
   1. [Code Layout](#codelayout)
@@ -956,11 +954,14 @@
  
     ```javascript
    // bad
-    if (problems) {
+    if (problems) 
+    {
         var response = betterCallSaul();
-        if (response === 'run') {
+        if (response === 'run') 
+        {
             moveToMexico();
         }
+
    //good
    if (problems) {
         var response = betterCallSaul();
