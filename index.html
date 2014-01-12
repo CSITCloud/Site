@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="CSIT &lt;style&gt; Guide : An One Stop Shop for all your Styling needs." />
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>CSIT &lt;style&gt; Guide by CSITCloud</title>
+    <title>CSIT &lt;style&gt; Guide</title>
   </head>
 
   <body>
-    <header>
-      <div class="inner">
-        <h1>CSIT &lt;style&gt; Guide</h1>
-        <h2></h2>
-        <a href="https://github.com/CSITCloud/Site" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/CSITCloud/Site">View on GitHub</a>
+
+          <h1 id="project_title">CSIT &lt;style&gt; Guide</h1>
+          <h2 id="project_tagline">An One Stop Shop for all your Styling needs.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/CSITCloud/Site/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/CSITCloud/Site/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
 <a name="csitjavascript-style-guide" class="anchor" href="#csitjavascript-style-guide"><span class="octicon octicon-link"></span></a>CSITJavaScript Style Guide</h1>
 
 <p><em>A mostly reasonable approach to JavaScript</em></p>
@@ -63,11 +66,8 @@
 <li><a href="#testing">Testing</a></li>
 <li><a href="#performance">Performance</a></li>
 <li><a href="#resources">Resources</a></li>
-<li><a href="#in-the-wild">In the Wild</a></li>
-<li><a href="#translation">Translation</a></li>
 <li><a href="#guide-guide">The JavaScript Style Guide Guide</a></li>
 <li><a href="#contributors">Contributors</a></li>
-<li><a href="#license">License</a></li>
 </ol><h2>
 <a name="types" class="anchor" href="#types"><span class="octicon octicon-link"></span></a><a name="types">Types</a>
 </h2>
@@ -1515,11 +1515,14 @@
 
 <ul>
 <li><a href="http://es5.github.com/">Annotated ECMAScript 5.1</a></li>
-</ul><p><strong>Other Styleguides</strong></p>
+</ul><p><strong>Credits</strong>
+  -<strong>We would like to thank and give credit to following links/authors</strong></p>
 
 <ul>
+<li><a href="https://github.com/airbnb/javascript">Airbnb JavaScript Style Guide</a></li>
 <li><a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google JavaScript Style Guide</a></li>
 <li><a href="http://docs.jquery.com/JQuery_Core_Style_Guidelines">jQuery Core Style Guidelines</a></li>
+<li><a href="http://wikicentral.cisco.com/display/GROUP/Cisco+IronPort+JavaScript+Style+Guide">Iron Port JavaScript Style Guide</a></li>
 <li><a href="https://github.com/rwldrn/idiomatic.js/">Principles of Writing Consistent, Idiomatic JavaScript</a></li>
 </ul><p><strong>Other Styles</strong></p>
 
@@ -1582,82 +1585,13 @@
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
 </ul><h2>
-<a name="in-the-wild" class="anchor" href="#in-the-wild"><span class="octicon octicon-link"></span></a><a name="in-the-wild">In the Wild</a>
-</h2>
-
-<p>This is a list of organizations that are using this style guide. Send us a pull request or open an issue and we'll add you to the list.</p>
-
-<ul>
-<li>
-<strong>Aan Zee</strong>: <a href="https://github.com/AanZee/javascript">AanZee/javascript</a>
-</li>
-<li>
-<strong>Airbnb</strong>: <a href="https://github.com/airbnb/javascript">airbnb/javascript</a>
-</li>
-<li>
-<strong>American Insitutes for Research</strong>: <a href="https://github.com/AIRAST/javascript">AIRAST/javascript</a>
-</li>
-<li>
-<strong>Compass Learning</strong>: <a href="https://github.com/compasslearning/javascript-style-guide">compasslearning/javascript-style-guide</a>
-</li>
-<li>
-<strong>ExactTarget</strong>: <a href="https://github.com/ExactTarget/javascript">ExactTarget/javascript</a>
-</li>
-<li>
-<strong>Gawker Media</strong>: <a href="https://github.com/gawkermedia/javascript">gawkermedia/javascript</a>
-</li>
-<li>
-<strong>GeneralElectric</strong>: <a href="https://github.com/GeneralElectric/javascript">GeneralElectric/javascript</a>
-</li>
-<li>
-<strong>GoodData</strong>: <a href="https://github.com/gooddata/gdc-js-style">gooddata/gdc-js-style</a>
-</li>
-<li>
-<strong>Grooveshark</strong>: <a href="https://github.com/grooveshark/javascript">grooveshark/javascript</a>
-</li>
-<li>
-<strong>How About We</strong>: <a href="https://github.com/howaboutwe/javascript">howaboutwe/javascript</a>
-</li>
-<li>
-<strong>Mighty Spring</strong>: <a href="https://github.com/mightyspring/javascript">mightyspring/javascript</a>
-</li>
-<li>
-<strong>MinnPost</strong>: <a href="https://github.com/MinnPost/javascript">MinnPost/javascript</a>
-</li>
-<li>
-<strong>ModCloth</strong>: <a href="https://github.com/modcloth/javascript">modcloth/javascript</a>
-</li>
-<li>
-<strong>National Geographic</strong>: <a href="https://github.com/natgeo/javascript">natgeo/javascript</a>
-</li>
-<li>
-<strong>National Park Service</strong>: <a href="https://github.com/nationalparkservice/javascript">nationalparkservice/javascript</a>
-</li>
-<li>
-<strong>Razorfish</strong>: <a href="https://github.com/razorfish/javascript-style-guide">razorfish/javascript-style-guide</a>
-</li>
-<li>
-<strong>REI</strong>: <a href="https://github.com/reidev/js-style-guide">reidev/js-style-guide</a>
-</li>
-<li>
-<strong>Shutterfly</strong>: <a href="https://github.com/shutterfly/javascript">shutterfly/javascript</a>
-</li>
-<li>
-<strong>Userify</strong>: <a href="https://github.com/userify/javascript">userify/javascript</a>
-</li>
-<li>
-<strong>Zillow</strong>: <a href="https://github.com/zillow/javascript">zillow/javascript</a>
-</li>
-<li>
-<strong>ZocDoc</strong>: <a href="https://github.com/ZocDoc/javascript">ZocDoc/javascript</a>
-</li>
-</ul><h2>
 <a name="contributors" class="anchor" href="#contributors"><span class="octicon octicon-link"></span></a><a name="authors">Contributors</a>
 </h2>
 
 <ul>
-<li><a href="https://github.com/airbnb/javascript/graphs/contributors">View Contributors</a></li>
+<li><a href="https://github.com/CSITCloud/Site/graphs/contributors">View Contributors</a></li>
 </ul>
+<<<<<<< HEAD
         </section>
 
         <aside id="sidebar">
@@ -1675,8 +1609,20 @@
           <p>Credits: This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
         </aside>
       </div>
+=======
+      </section>
+>>>>>>> 743219b0bdf610b9e6891b5b45ef1a423fd52254
     </div>
 
-  
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">CSIT &lt;style&gt; Guide maintained by <a href="https://github.com/CSITCloud">CSITCloud</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
   </body>
 </html>
