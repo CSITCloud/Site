@@ -34,7 +34,6 @@
   1. [Translation](#translation)
   1. [The JavaScript Style Guide Guide](#guide-guide)
   1. [Contributors](#contributors)
-  1. [License](#license)
 
 ## <a name='types'>Types</a>
 
