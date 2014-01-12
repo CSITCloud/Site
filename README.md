@@ -909,7 +909,6 @@
 
     **[[⬆]](#TOC)**
 
-
 ## <a name='semicolons'>Semicolons</a>
 
   - **Yup.**
@@ -933,10 +932,11 @@
       return name;
     })();
   ```
- >  Did anyone notice that leading semicolon? **Yes** Great Job!
+ >  Did anyone notice that leading semicolon? **Yes?** Great Job!
  >  Use this as the first statement in your JavaScript file. This helps, while merging two or more JavaScript files.
 
     **[[⬆]](#TOC)**
+    
 ## <a name='braces'>Braces</a>
 
   - **Always use braces.**
@@ -952,7 +952,7 @@
         betterCallSaul();
     }
     ```
- - Opening braces on the same line as the statement.
+  - Opening braces on the same line as the statement.
  
     ```javascript
    // bad
@@ -969,7 +969,6 @@
     }
     ```
     **[[⬆]](#TOC)**
-
 
 ## <a name='type-coercion'>Type Casting & Coercion</a>
 
