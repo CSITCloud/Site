@@ -1,6 +1,5 @@
 # CSITJavaScript Style Guide
 
-*A mostly reasonable approach to JavaScript*
 
 
 ## <a name='TOC'>Table of Contents</a>
