@@ -934,13 +934,13 @@
     })();
   ```
  >  Did anyone notice that leading semicolon? **Yes** Great Job!
-    Use this as the first statement in your JavaScript file. This helps, while merging two or more JavaScript files.
+ >  Use this as the first statement in your JavaScript file. This helps, while merging two or more JavaScript files.
 
     **[[⬆]](#TOC)**
 ## <a name='braces'>Braces</a>
 
   - **Always use braces.**
-  - **Even for single-line blocks.**
+  - Even for single-line blocks.
 
     ```javascript
     // bad
@@ -948,11 +948,11 @@
         betterCallSaul();
         
     //good
-    if (problems){
+    if (problems) {
         betterCallSaul();
     }
     ```
- - **Opening braces on the same line as the statement.**
+ - Opening braces on the same line as the statement.
  
     ```javascript
    // bad
@@ -963,9 +963,9 @@
         }
    //good
    if (problems) {
-    var response = betterCallSaul();
-    if (response === 'run') {
-        moveToMexico();
+        var response = betterCallSaul();
+        if (response === 'run') {
+            moveToMexico();
     }
     ```
     **[[⬆]](#TOC)**
