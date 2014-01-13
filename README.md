@@ -1055,7 +1055,7 @@
     false === 'false'  	//false
     false === '0'  		//false
     null === undefined  //false
-	52 !== '52' 		//false
+	52 !== '52' 		//true
 
     ```
 
