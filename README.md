@@ -346,11 +346,12 @@
     sell(); betterCallSaul(); keepJessieSober();
     
     //good
-    if ('Walter White' === 'Heisenberg') 
+    if ('Walter White' === 'Heisenberg'){ 
         cook();
-        sell(); 
-        betterCallSaul(); 
-        keepJessieSober();
+        }
+    sell(); 
+    betterCallSaul(); 
+    keepJessieSober();
     
     ```
     **[[⬆]](#TOC)**
