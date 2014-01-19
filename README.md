@@ -308,7 +308,8 @@
     })(this);
 
     ```
-
+ >  This is useful while concatanation. For more information ([click me.](http://evanhahn.com/newline-necessary-at-the-end-of-javascript-files/))
+ 
   - Use indentation when making long method chains.
 
     ```javascript
