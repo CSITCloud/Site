@@ -45,7 +45,6 @@
       // ..stuff..
     }
     ```
-
   - Use camelCase when naming objects, functions, and instances
 
     ```javascript
