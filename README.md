@@ -326,6 +326,7 @@
     keepJessieSober();
     
     ```
+ >  For automating, white spaces rules use a editor like Sublime Text or Brackets and install JSLint/JSHint plugins. If not, use editor of your own choice and visit [here](http://jsbeautifier.org/) for beautifying your code.
     **[[⬆]](#TOC)**
 
 ## <a name='commas'>Commas</a>
